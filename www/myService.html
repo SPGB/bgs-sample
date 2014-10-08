@@ -26,7 +26,9 @@
         	var myService;
         	
         	document.addEventListener('deviceready', function() {
-				myService = cordova.plugins.myService;
+				var serviceName = 'com.red_folder.phonegap.plugin.backgroundservice.sample.MyService';
+  				var factory = cordova.require('com.red_folder.phonegap.plugin.backgroundservice.BackgroundService');
+  				myService = factory.create(serviceName);
 				getStatus();
   			}, true);
 
